@@ -1,1 +1,1 @@
-My personal repository of all the exercises using PHP
+#My personal repository of all exercises from learning PHP
