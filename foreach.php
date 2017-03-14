@@ -2,24 +2,34 @@
 
 $things = ['Sgt. Pepper', "11", null, [1,2,3], 3.14, "12 + 7", false, (string) 11];
 
-// foreach ($things as $datum) {
-//     if (is_int($datum)) {
-//         echo "{$datum} is an integer\n";
-//     } else if (is_float($datum)) {
-//         echo "{$datum} is a float\n";
-//     } else if (is_string($datum)) {
-//     	echo "{$datum} is a string\n";
-//     } else if (is_bool($datum)) {
-//     	echo "{$datum} is a boolean\n";
-//     } else if (is_array($datum)) {
-//     	echo "{$datum} is an array\n";
-//     } else if (is_null($datum)) {
-//     	echo "{$datum} is null\n";
+// foreach ($things as $dataType) {
+
+//     if (is_int($dataType)) {
+//         echo "integer\n";
+//     } else if (is_float($dataType)) {
+//         echo "float\n";
+//     } else if (is_string($dataType)) {
+//     	echo "string\n";
+//     } else if (is_bool($dataType)) {
+//     	echo "boolean\n";
+//     } else if (is_array($dataType)) {
+//     	echo "array\n";
+//     } else if (is_null($dataType)) {
+//     	echo "null\n";
 //     }
+
 // }
 
-foreach ($things as $datum) {
-	if(is_scalar($datum)) {
-		echo $datum . PHP_EOL;
+// foreach ($things as $dataType) {
+// 	if(is_scalar($dataType)) {
+// 		echo $dataType . PHP_EOL;
+// 	}
+// }
+
+foreach ($things as $dataType) {
+	if (is_array($dataType)) {
+		
+	} else {
+		echo $dataType . PHP_EOL;
 	}
 }
