@@ -19,10 +19,8 @@ $countBy = trim(fgets(STDIN));
 fwrite(STDOUT, "Counting from $min to $max by increments of $countBy" . PHP_EOL);
 
 if (is_numeric($min) == 1 && is_numeric($max) == 1 && is_numeric($countBy) == 1) {
-	if (isset($countBy) == true) {
-		for ($min; $min <= $max; $min += $countBy) {
-			echo $min . PHP_EOL;
-		}
+	for ($min; $min <= $max; $min += $countBy) {
+		echo $min . PHP_EOL;
 	}
 } else if (is_numeric($min) == 1 && is_numeric($max) == 1 && is_numeric($countBy) != 1) {
 	for ($min; $min <= $max; $min += 1) {
