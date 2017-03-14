@@ -1,6 +1,6 @@
 <?php
 
-$things = ['Sgt. Pepper', "11", null, [1,2,3], 3.14, "12 + 7", false, (string) 11];
+$things = ['Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, (string) 11];
 
 // foreach ($things as $dataType) {
 
@@ -26,10 +26,19 @@ $things = ['Sgt. Pepper', "11", null, [1,2,3], 3.14, "12 + 7", false, (string) 1
 // 	}
 // }
 
+$index = 0;
+
 foreach ($things as $dataType) {
 	if (is_array($dataType)) {
-		
+		foreach ($dataType as $value) {
+            echo ($value . " ");
+        }
+        echo "" . PHP_EOL;
 	} else {
 		echo $dataType . PHP_EOL;
 	}
 }
+
+
+
+
