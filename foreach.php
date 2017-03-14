@@ -26,8 +26,6 @@ $things = ['Sgt. Pepper', "11", null, array(1,2,3), 3.14, "12 + 7", false, (stri
 // 	}
 // }
 
-$index = 0;
-
 foreach ($things as $dataType) {
 	if (is_array($dataType)) {
 		foreach ($dataType as $value) {
