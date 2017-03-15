@@ -7,8 +7,8 @@ $counter = 99;
 do {
 	echo "$counter bottles of beer on the wall, $counter bottles of beer. Take one down, pass it around, " . ($counter - 1) . " bottles of beer on the wall." . PHP_EOL;
 	$counter--;
-} while ($counter >= 3);
+} while ($counter > 2);
 
-if ($counter <= 2) {
+if ($counter == 2) {
 	echo "$counter bottles of beer on the wall, $counter bottles of beer. Take one down, pass it around, oh no, somebody go to a meetup!" . PHP_EOL;
 } 

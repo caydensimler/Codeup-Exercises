@@ -1,4 +1,5 @@
 <?php
+
 	function odd($var) {
 	    // returns whether the input integer is odd
 	    return($var & 1);

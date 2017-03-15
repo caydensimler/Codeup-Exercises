@@ -64,9 +64,9 @@ $states = [
 foreach ($states as $key => $value) {
 
 	if (strpos($value, "x") !== false) {
-		echo $value . " (state contains the letter x)" . PHP_EOL;
+		echo "\033[01;36m $value (state contains the letter x) \033[0m" . PHP_EOL;
 	} else if (strpos($value, "a") == false) {
-		echo $value . " (state doesn't contain the letter a)" . PHP_EOL;
+		echo "\033[01;33m $value (state doesn't contain the letter a) \033[0m" . PHP_EOL;
 	} else if (
 		substr($value, 0, 1) == "A" || 
 		substr($value, 0, 1) == "E" || 
@@ -75,7 +75,7 @@ foreach ($states as $key => $value) {
 		substr($value, 0, 1) == "U"
 		) {
 		
-		echo $key . " - " . $value . " (state starts with a vowel)" . PHP_EOL;
+		echo "\033[01;31m $key - $value (state starts with a vowel) \033[0m" . PHP_EOL;
 	}
 }
 
