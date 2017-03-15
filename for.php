@@ -18,19 +18,18 @@ $countBy = trim(fgets(STDIN));
 
 fwrite(STDOUT, "Counting from $min to $max by increments of $countBy" . PHP_EOL);
 
-if (is_numeric($min) == 1 && is_numeric($max) == 1 && is_numeric($countBy) == 1) {
+if (is_numeric($min) && is_numeric($max) && is_numeric($countBy)) {
 	for ($min; $min <= $max; $min += $countBy) {
 		// if ($min % 2 === 0){
 			echo $min . PHP_EOL;
 		// }
 	}
-} else if (is_numeric($min) == 1 && is_numeric($max) == 1 && is_numeric($countBy) != 1) {
+} else if (is_numeric($min) && is_numeric($max) && !is_numeric($countBy)) {
 	for ($min; $min <= $max; $min += 1) {
 		echo $min . PHP_EOL;
 	}
 } else {
 	echo "Input not valid.";
 }
-
 
 
