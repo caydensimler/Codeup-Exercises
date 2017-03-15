@@ -1,5 +1,9 @@
 <?php
 
+$a = 10;
+$b = 2;
+
+
 function add($a, $b) {
     return $a + $b;
 }
@@ -32,3 +36,6 @@ echo multiply(4, 4) . PHP_EOL;
 echo divide(6, 3) . PHP_EOL;
 
 echo modulus(4, 2)  . PHP_EOL;
+
+
+
