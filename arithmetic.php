@@ -1,41 +1,73 @@
 <?php
 
-$a = 10;
-$b = 2;
-
 
 function add($a, $b) {
-    return $a + $b;
+    if (is_numeric($a) && is_numeric($b)) {
+        return "$a + $b = " . $a + $b;
+    } else {
+        errorMessage();
+        echo "\tCannot evaluate for $a and $b.";
+    }
 }
 
 function subtract($a, $b) {
-    return $a - $b;
+    if (is_numeric($a) && is_numeric($b)) {
+        return "$a - $b = " . $a - $b;
+    } else {
+        errorMessage();
+        echo "\tCannot evaluate for $a and $b.";
+    }
 }
 
 function multiply($a, $b) {
-    return $a * $b;
+    if (is_numeric($a) && is_numeric($b)) {
+        return "$a * $b = " . $a * $b;
+    } else {
+        errorMessage();
+        echo "\tCannot evaluate for $a and $b.";
+    }
 }
 
 function divide($a, $b) {
-    return $a / $b;
+    if (is_numeric($a) && is_numeric($b)) {
+    	if ($b === 0) {
+    		return "Can not divide by zero.";
+    	} else {
+    		return "$a / $b = " . $a / $b;
+    	}
+    } else {
+        errorMessage();
+        echo "\tCannot evaluate for $a and $b.";
+    }
 }
 
 function modulus($a, $b) {
-	return $a % $b;
+
+    if (is_numeric($a) && is_numeric($b)) {
+    	return "$a % $b = " . $a % $b;
+    } else {
+        errorMessage();
+        echo "\tCannot evaluate for $a and $b.";
+    }
 }
 
 // Add code to test your functions here
 
 
-echo add(2, 2) . PHP_EOL;
+echo add("two", "one") . PHP_EOL;
 
-echo subtract(10, 5) . PHP_EOL;
+echo subtract(10, 2) . PHP_EOL;
 
 echo multiply(4, 4) . PHP_EOL;
 
-echo divide(6, 3) . PHP_EOL;
+echo divide(6, 0) . PHP_EOL;
 
 echo modulus(4, 2)  . PHP_EOL;
+
+
+function errorMessage(){
+	echo "Invalid input for arguments. Both must be numbers." . PHP_EOL;
+}
 
 
 
