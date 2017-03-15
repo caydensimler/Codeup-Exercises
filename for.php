@@ -20,7 +20,9 @@ fwrite(STDOUT, "Counting from $min to $max by increments of $countBy" . PHP_EOL)
 
 if (is_numeric($min) == 1 && is_numeric($max) == 1 && is_numeric($countBy) == 1) {
 	for ($min; $min <= $max; $min += $countBy) {
-		echo $min . PHP_EOL;
+		// if ($min % 2 === 0){
+			echo $min . PHP_EOL;
+		// }
 	}
 } else if (is_numeric($min) == 1 && is_numeric($max) == 1 && is_numeric($countBy) != 1) {
 	for ($min; $min <= $max; $min += 1) {
