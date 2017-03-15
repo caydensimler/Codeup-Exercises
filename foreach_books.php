@@ -24,3 +24,10 @@ $books = array(
 );
 
 
+foreach ($books as $key => $book) {
+	echo $key . PHP_EOL;
+
+	foreach ($book as $key => $info) {
+		echo "\t$key : $info" . PHP_EOL;
+	}
+}
