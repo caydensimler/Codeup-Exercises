@@ -16,6 +16,10 @@ function divide($a, $b) {
     return $a / $b;
 }
 
+function modulus($a, $b) {
+	return $a % $b;
+}
+
 // Add code to test your functions here
 
 
@@ -26,3 +30,5 @@ echo subtract(10, 5) . PHP_EOL;
 echo multiply(4, 4) . PHP_EOL;
 
 echo divide(6, 3) . PHP_EOL;
+
+echo modulus(4, 2)  . PHP_EOL;
