@@ -61,24 +61,78 @@ $states = [
     'WY' => 'Wyoming'
 ];
 
-foreach ($states as $key => $value) {
 
-	if (strpos($value, "x") !== false) {
-		echo "\033[01;36m $value (state contains the letter x) \033[0m" . PHP_EOL;
-	} else if (strpos($value, "a") == false) {
-		echo "\033[01;33m $value (state doesn't contain the letter a) \033[0m" . PHP_EOL;
-	} else if (
-		substr($value, 0, 1) == "A" || 
-		substr($value, 0, 1) == "E" || 
-		substr($value, 0, 1) == "I" || 
-		substr($value, 0, 1) == "O" || 
-		substr($value, 0, 1) == "U"
-		) {
-		
-		echo "\033[01;31m $key - $value (state starts with a vowel) \033[0m" . PHP_EOL;
-	}
+
+$vowelCheck = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+
+// foreach ($states as $abbreviation => $name) {
+//     $length = strlen($name);
+//     if ((in_array($name[0], $vowelCheck))){
+//         echo "\033[01;31m $abbreviation - $name (starts with a vowel) \033[0m" . PHP_EOL;
+//     }
+// }
+
+//////////////////////////////////////////
+// States starting and ending with a vowel
+//////////////////////////////////////////
+$vowelStates = [];
+
+foreach ($states as $abbreviation => $name) {
+    $length = strlen($name);
+    if ((in_array($name[0], $vowelCheck)) && (in_array($name[$length - 1], $vowelCheck))){
+        array_push($vowelStates, $name);
+    }
 }
 
+echo "These are the states starting and ending with vowels:" . PHP_EOL;
+
+foreach ($vowelStates as $stateName) {
+            echo $stateName . PHP_EOL;
+        }
+
+//////////////////////////////////////
+// States that have more than one word
+//////////////////////////////////////
+$moreThanOneWord = [];
+
+foreach ($states as $abbreviation => $name) {
+    if (strpos($name, " ")) {
+        array_push($moreThanOneWord, $name);
+    }
+}
+
+echo PHP_EOL;
+
+echo "These are the states that have more than one word:" . PHP_EOL;
+
+foreach ($moreThanOneWord as $stateName) {
+            echo $stateName . PHP_EOL;
+        }
+
+//////////////////////////////////////////////////////////
+// States the contain the word North, East, South, or West
+//////////////////////////////////////////////////////////
+$arrayOfCardinalStates = [];
+
+foreach ($states as $abbreviation => $name) {
+    if (
+        (strpos($name, "North")  !== false) ||
+        (strpos($name, "East")  !== false) ||
+        (strpos($name, "South")  !== false) ||
+        (strpos($name, "West")  !== false)
+
+        ){
+        array_push($arrayOfCardinalStates, $name);
+    }
+}
+
+echo PHP_EOL;
+
+echo "These are the states that contain the word North, East, South, or West:" . PHP_EOL;
+
+foreach ($arrayOfCardinalStates as $stateName) {
+            echo $stateName . PHP_EOL;
+        }
 
 
 
