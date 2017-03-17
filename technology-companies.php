@@ -50,6 +50,8 @@ ksort($companies);
 foreach ($companies as $company => $companyName) {
     echo $company . PHP_EOL;
 
+    asort($companyName);
+
     foreach ($companyName as $employees => $employeeName) {
         echo "\t" . $employeeName . PHP_EOL;
     }
