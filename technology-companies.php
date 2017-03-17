@@ -47,8 +47,12 @@ $companies = [
 
 ksort($companies);
 
-foreach ($companies as $companyName => $employees) {
-    echo $companyName . PHP_EOL;
+foreach ($companies as $company => $companyName) {
+    echo $company . PHP_EOL;
+
+    foreach ($companyName as $employees => $employeeName) {
+        echo "\t" . $employeeName . PHP_EOL;
+    }
 
 }
 
