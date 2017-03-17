@@ -45,11 +45,13 @@ $companies = [
     ]
 ];
 
+ksort($companies);
 
 foreach ($companies as $companyName => $employees) {
     echo $companyName . PHP_EOL;
 
 }
+
 
 
 
