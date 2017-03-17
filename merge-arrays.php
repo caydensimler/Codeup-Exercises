@@ -3,6 +3,8 @@
 $names = ['Tina', 'Dana', 'Mike', 'Amy', 'Adam'];
 $compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael'];
 
+$merge = [];
+
 
 function arraySearch($a, $b) {
 
@@ -26,9 +28,19 @@ function compareArray($a, $b) {
 }
 
 
-arraySearch('Tina', $names);
-compareArray($names, $compare);
+function combineArrays($a, $b) {
+	$merge = [];
+	foreach ($a as $name) {
+		array_push($merge, $name);
+	}
 
+	foreach ($b as $name) {
+		array_push($merge, $name);
+	}
+	$merge = array_unique($merge);
+	print_r($merge);
+}
 
+combineArrays($names, $compare);
 
 

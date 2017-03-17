@@ -1,6 +1,5 @@
 <?php
 
-
 function add($a, $b) {
     if (is_numeric($a) && is_numeric($b)) {
         return "$a + $b = " . $a + $b;
@@ -67,7 +66,6 @@ echo modulus(4, 2)  . PHP_EOL;
 
 function errorMessage(){
 	echo "Invalid input for arguments. Both must be numbers." . PHP_EOL;
-	echo "\tCannot evaluate for $a and $b.";
 }
 
 

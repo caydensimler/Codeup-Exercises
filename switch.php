@@ -25,25 +25,25 @@ $dayOfWeek = date('N');
 
 switch($dayOfWeek) {
     case 1:
-    	echo "Monday" . PHP_EOL;
+        echo "Today is Monday" . PHP_EOL;
     	break;
     case 2:
-    	echo "Tuesday" . PHP_EOL;
+    	echo "Today is Tuesday" . PHP_EOL;
     	break;
     case 3:
-    	echo "Wednesday" . PHP_EOL;
+    	echo "Today is Wednesday" . PHP_EOL;
     	break;
     case 4:
-    	echo "Thursday" . PHP_EOL;
+    	echo "Today is Thursday" . PHP_EOL;
     	break;
     case 5: 
-    	echo "Friday" . PHP_EOL;
+    	echo "Today is Friday" . PHP_EOL;
     	break;
     case 6:
-    	echo "Saturday" . PHP_EOL;
+    	echo "Today is Saturday" . PHP_EOL;
     	break;
     case 7: 
-    	echo "Sunday" . PHP_EOL;
+    	echo "Today is Sunday" . PHP_EOL;
     	break; 
 }
 
