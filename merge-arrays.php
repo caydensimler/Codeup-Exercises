@@ -43,4 +43,6 @@ function combineArrays($a, $b) {
 
 combineArrays($names, $compare);
 
+compareArray($names, $compare);
+
 
