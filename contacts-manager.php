@@ -4,8 +4,6 @@
 function retrieveContacts($filename) {
 	clearstatcache();
 
-	$contacts = [];
-
 	$handle = fopen($filename, "r");
 	$contents = trim(fread($handle, filesize($filename)));
 	fclose($handle);
@@ -21,9 +19,10 @@ function retrieveContacts($filename) {
 			$phone = substr($tempArray[1], 0, 3) . "-" . substr($tempArray[1], 3, 3) . "-" . substr($tempArray[1], 6);
 		} else if (strlen($tempArray[1]) === 7) {
 			$phone = substr($tempArray[1], 0, 3) . "-" . substr($tempArray[1], 3, 4);
-		}
+		};
 		$contacts[$key]["number"] = $phone;
 	}
+
 
 	echo "/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\\" . PHP_EOL;
 	echo "\033[0;35m\tNAME\t |\t NUMBER\033[0m" . PHP_EOL;
@@ -32,9 +31,7 @@ function retrieveContacts($filename) {
 
 		$contactName = "\033[0;35m" . $contact['name'] . "\033[0m";
 		$contactNumber = "\033[0;35m" . $contact['number'] . "\033[0m";
-		// echo "\033[0;35m{str_pad($contact['name'], 15)} | {$contact['number']}\033[0m" . PHP_EOL;
 		echo str_pad($contactName, 28) . "|" . "    " . $contactNumber . PHP_EOL;
-		// var_dump($contactName) . PHP_EOL;
 	}
 
 	echo "" . PHP_EOL;
@@ -49,11 +46,9 @@ function createContact($filename){
 	// First name input
 	fwrite(STDOUT, "First name: " . PHP_EOL);
 		$firstName = trim(fgets(STDIN));
-
 	// Last name input
 	fwrite(STDOUT, "Last name: " . PHP_EOL);
 		$lastName = trim(fgets(STDIN));
-
 	// Phone number input
 	fwrite(STDOUT, "Phone Number: " . PHP_EOL);
 		$phoneNumber = trim(fgets(STDIN));
@@ -98,7 +93,6 @@ function searchContacts($contacts){
     }
 }
 
-// echo "\033[01;34m" . $contact['name'] . " | " . $contact['number'] . "\033[0m" . PHP_EOL;
 
 function deleteContact($filename){
 
